@@ -10,3 +10,8 @@ alembic
 authlib
 python-jose[cryptography]
 sendgrid
+openai
+pandas
+prophet
+pytest
+pytest-regressions

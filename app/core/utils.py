@@ -7,9 +7,9 @@ from datetime import datetime, timedelta
 from app.core.config import settings
 
 SENDGRID_API_KEY = settings.SENDGRID_API_KEY
-EMAIL_SENDER    = settings.EMAIL_SENDER
+EMAIL_SENDER = settings.EMAIL_SENDER
 SECRET_KEY = settings.SECRET_KEY
-ALGORITHM       = "HS256"
+ALGORITHM = settings.ALGORITHM
 
 def create_magic_token(email: str) -> str:
     """

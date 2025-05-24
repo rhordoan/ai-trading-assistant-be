@@ -4,7 +4,7 @@ from datetime import datetime
 from app.models.user import TradingExperienceLevel, RiskAppetite, InvestmentGoals
 
 class UserBase(BaseModel):
-    username: Optional[str] = Field(None, min_length=3, max_length=50)
+    username: Optional[str] = Field(None, min_length=2, max_length=50)
     email: Optional[EmailStr] = None
     full_name: Optional[str] = Field(None, max_length=100)
     profile_picture_url: Optional[str] = None
@@ -35,3 +35,12 @@ class User(UserInDBBase):
 
 class UserInDB(UserInDBBase):
     hashed_password: str
+
+class UserOut(BaseModel):
+    id:        int
+    username:  str
+    email:     EmailStr
+    full_name: Optional[str] = None
+
+    class Config:
+        orm_mode = True
